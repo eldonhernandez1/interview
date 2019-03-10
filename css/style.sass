@@ -1,0 +1,112 @@
+// Variables
+$primary: #ffffff
+$accent: #4f4d4d
+
+
+// Mixins
+=border-radius($radius)
+    border-radius: $radius
+    -webkit-border-radius: $radius
+    -ms-border-radius: $radius
+
+// Styles 
+body 
+    background: $primary
+    color: $accent
+    
+    article
+        background: $primary
+        border: 1px solid $accent
+        +border-radius(10px)
+
+img
+    +border-radius(10px) 
+    margin-bottom: 10px
+
+%message
+    border: 2px solid green
+    padding: 20px
+
+.success
+    @extend %message
+    background: green
+
+.error
+    @extend %message
+    background: red   
+
+// Bootstrap Image Overlay Styles
+h1.card-image-overlay
+    top: 25%
+
+// Google Fonts 
+h1 
+    font-family: "Montserrat", sans-serif
+
+
+p, .centered
+    font-family:"PT Sans Narrow", sans-serif
+    font-size: 35px
+
+ 
+// Font Awesome Styles
+#chain, #battery
+    font-size: 150px
+    margin-right: 50px
+
+// Header Image Styles
+
+    
+// Flex Box Styles 
+.container-1 div, .container-2 div 
+    border: 1px solid #000000
+    padding: 15px
+    +border-radius(10px)
+
+
+.container-2-box
+    flex-basis: 30%
+
+.box-1
+    flex: 1 // Changing this value will change the size of the box. I left it at one so they all look the same. Changing it to 3 will make it wider
+    order: 2
+
+.box-2
+    flex: 1
+    order: 3
+
+.box-3
+    flex: 1
+    order: 1
+
+// CSS Animation
+.btn 
+  background-color: #f4511e
+  border: none
+  color: white
+  padding: 16px 32px
+  text-align: center
+  font-size: 16px
+  margin: 4px 2px
+  opacity: 0.6
+  transition: 0.9s
+
+
+.btn:hover 
+    opacity: 1
+
+// First child / Last child
+article
+    margin-top: 20px 
+    padding: 15px
+
+article :first-child 
+    color: navy
+
+
+p:last-child 
+    font-size: 1.95em
+    font-style: italic
+   
+// Import files always go below. Not above. It'll think it's a variable.
+@import footer
